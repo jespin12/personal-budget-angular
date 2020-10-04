@@ -1,10 +1,44 @@
 const express = require('express');
 const app = express();
 const port = 3000;
+const budget = require('./data.json');
 
 app.use('/', express.static('public'));
 
-const budget ={
+//const data = require("\dev\week03\personal-budget"); 
+//console.log(data);
+
+app.get('/hello', (req, res) => {
+  res.send('Hello World!');
+});
+
+app.get('/budget', (req, res) => {
+  res.json(budget);
+});
+
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`)
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /* const budget ={
   myBudget: [
   {
     title: 'Eat out',
@@ -20,7 +54,7 @@ const budget ={
   },
   {
     title: 'Credit Card',
-    budget: 150
+    budget: 150 
   },
   {
     title: 'Car payment',
@@ -35,16 +69,4 @@ const budget ={
     budget: 50
   },
 ]
-};
-
-app.get('/hello', (req, res) => {
-  res.send('Hello World!');
-});
-
-app.get('/budget', (req, res) => {
-  res.json(budget);
-});
-
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
-});
+};  */
