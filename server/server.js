@@ -2,9 +2,10 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const budget = require('./data.json');
+const cors = require('cors')
 
 app.use('/', express.static('public'));
-
+app.use(cors())
 //const data = require("\dev\week03\personal-budget"); 
 //console.log(data);
 
